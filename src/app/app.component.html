@@ -1,0 +1,22 @@
+<h1>FileUpload</h1>
+<input type="file" (change)="onFileSelected($event)">
+<button type="button" (click)="onUpload()">Upload</button>
+
+<table>
+    <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th></th>
+            <th scope="col">URL</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of fileInfos;">
+            <td>{{ e.name }}</td>
+            <td>{{"------> "}}</td>
+            <td>
+            <a [attr.href]="e.url" target="_blank">{{ e.name }}</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
